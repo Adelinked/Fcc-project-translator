@@ -157,6 +157,14 @@ suite("Unit Tests", () => {
       );
     });
     //#19
+    test("Translate Prof Joyner of King's College, London. to American English", () => {
+      text = "Prof Joyner of King's College, London.";
+      assert.equal(
+        translator.translate(text, locale),
+        '<span class="highlight">Prof.</span> Joyner of King\'s College, London.'
+      );
+    });
+    //#20
     test("Translate Tea time is usually around 4 or 4.30. to American English", () => {
       text = "Tea time is usually around 4 or 4.30.";
       assert.equal(
@@ -168,7 +176,7 @@ suite("Unit Tests", () => {
   suite("Highlights tests suite", () => {
     let locale;
     let text;
-    //#20
+    //#21
     test("Highlight translation in Mangoes are my favorite fruit.", () => {
       locale = "american-to-british";
       text = "Mangoes are my favorite fruit.";
@@ -177,7 +185,7 @@ suite("Unit Tests", () => {
         'Mangoes are my <span class="highlight">favourite</span> fruit.'
       );
     });
-    //#21
+    //#22
     test("Highlight translation in I ate yogurt for breakfast.", () => {
       locale = "american-to-british";
       text = "I ate yogurt for breakfast.";
@@ -186,7 +194,7 @@ suite("Unit Tests", () => {
         'I ate <span class="highlight">yoghurt</span> for breakfast.'
       );
     });
-    //#22
+    //#23
     test("Highlight translation in We watched the footie match for a while.", () => {
       locale = "british-to-american";
       text = "We watched the footie match for a while.";
@@ -195,7 +203,7 @@ suite("Unit Tests", () => {
         'We watched the <span class="highlight">soccer</span> match for a while.'
       );
     });
-    //#23
+    //#24
     test("Highlight translation in Paracetamol takes up to an hour to work.", () => {
       locale = "british-to-american";
       text = "Paracetamol takes up to an hour to work.";
